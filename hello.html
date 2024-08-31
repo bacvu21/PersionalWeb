@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gửi tới người yêu</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .heart {
+        font-size: 48px;
+        color: #e74c3c;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        animation: pulse 2s infinite, colorChange 6s infinite;
+        cursor: pointer;
+      }
+
+      .name {
+        font-size: 24px;
+        color: #333;
+        margin-top: 20px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .show {
+        opacity: 1;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes colorChange {
+        0% {
+          color: #e74c3c;
+        }
+        33% {
+          color: #f39c12;
+        }
+        66% {
+          color: #3498db;
+        }
+        100% {
+          color: #e74c3c;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart" onclick="showName()">Anh yêu em lắm :3</div>
+    <div id="name" class="name">Nguyễn Hoàng Anh</div>
+
+    <script>
+      function showName() {
+        document.getElementById("name").classList.add("show");
+      }
+    </script>
+  </body>
+</html>
